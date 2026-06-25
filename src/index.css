@@ -1,21 +1,26 @@
 :root {
-  --bg: #0b0d14;
-  --bg-soft: #11141f;
-  --surface: #161a28;
-  --surface-2: #1c2133;
-  --line: #262c40;
-  --ink: #eef1f8;
-  --ink-soft: #9aa3bd;
-  --accent: #7c5cff;
-  --accent-strong: #6a48f5;
-  --accent-glow: rgba(124, 92, 255, 0.35);
-  --mint: #28e0a8;
-  --danger: #ff5d73;
-  --radius: 16px;
-  --radius-sm: 10px;
+  --bg: #16181c;
+  --bg-soft: #1b1e23;
+  --surface: #212429;
+  --surface-2: #282c33;
+  --line: #31353d;
+  --ink: #e9eaed;
+  --ink-soft: #a1a6af;
+  --ink-faint: #7b818b;
+  --accent: #c9743a;
+  --accent-strong: #b56430;
+  --accent-ink: #fbf6f1;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.28), 0 10px 24px rgba(0, 0, 0, 0.2);
 
-  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial,
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia,
+    'Times New Roman', serif;
+  --sans: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial,
     sans-serif;
+
+  font-family: var(--sans);
   color: var(--ink);
   color-scheme: dark;
 }
@@ -32,11 +37,7 @@ body {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(900px 500px at 80% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
-    radial-gradient(700px 500px at -10% 10%, rgba(40, 224, 168, 0.1), transparent 55%),
-    var(--bg);
-  background-attachment: fixed;
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 

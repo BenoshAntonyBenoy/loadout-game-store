@@ -88,10 +88,10 @@ function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">
-          <span className="brand-mark">▶</span>
+          <span className="brand-mark">L</span>
           <div>
+            <span className="brand-kicker">The gaming desk</span>
             <h1>Loadout</h1>
-            <p>Gear up before the next run.</p>
           </div>
         </div>
         <span className="cart-count">{count} in cart</span>
