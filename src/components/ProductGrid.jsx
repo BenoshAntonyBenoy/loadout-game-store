@@ -2,7 +2,7 @@ import ProductCard from './ProductCard.jsx'
 
 function ProductGrid({ products, onAdd }) {
   if (products.length === 0) {
-    return <p className="grid-empty">Nothing here in this category yet.</p>
+    return <p className="grid-empty">No products match. Try another search or category.</p>
   }
 
   return (

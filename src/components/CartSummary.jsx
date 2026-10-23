@@ -11,9 +11,7 @@ function CartSummary({ total, count }) {
         <span>Total</span>
         <span>{formatRupees(total)}</span>
       </div>
-      <button type="button" className="btn btn-checkout" disabled={count === 0}>
-        Checkout
-      </button>
+      <p className="demo-note">Demo total only. No payment is taken.</p>
     </div>
   )
 }
