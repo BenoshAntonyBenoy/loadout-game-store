@@ -3,6 +3,7 @@ import { products, CATEGORIES } from './products.js'
 import CategoryFilter from './components/CategoryFilter.jsx'
 import ProductGrid from './components/ProductGrid.jsx'
 import Cart from './components/Cart.jsx'
+import { findProducts, restoreCart } from './storeData.js'
 import './App.css'
 
 const CART_KEY = 'loadout:cart'
@@ -11,7 +12,7 @@ function loadCart() {
   try {
     const raw = localStorage.getItem(CART_KEY)
     const parsed = raw ? JSON.parse(raw) : []
-    return Array.isArray(parsed) ? parsed : []
+    return restoreCart(parsed, products)
   } catch {
     return []
   }
@@ -20,15 +21,18 @@ function loadCart() {
 function App() {
   const [activeCategory, setActiveCategory] = useState('All')
   const [cart, setCart] = useState(loadCart)
+  const [query, setQuery] = useState('')
+  const [sort, setSort] = useState('featured')
+  const [storageError, setStorageError] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart))
+    try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); setStorageError(false) }
+    catch { setStorageError(true) }
   }, [cart])
 
   const visibleProducts = useMemo(() => {
-    if (activeCategory === 'All') return products
-    return products.filter((product) => product.category === activeCategory)
-  }, [activeCategory])
+    return findProducts(products, activeCategory, query, sort)
+  }, [activeCategory, query, sort])
 
   const total = useMemo(
     () => cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
@@ -46,7 +50,7 @@ function App() {
       if (existing) {
         return current.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: Math.min(99, item.quantity + 1) }
             : item,
         )
       }
@@ -65,7 +69,7 @@ function App() {
   function increase(id) {
     setCart((current) =>
       current.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+        item.id === id ? { ...item, quantity: Math.min(99, item.quantity + 1) } : item,
       ),
     )
   }
@@ -97,8 +101,16 @@ function App() {
         <span className="cart-count">{count} in cart</span>
       </header>
 
+      <p className="demo-note"><strong>Storefront demo.</strong> Products and prices are examples. No checkout or payment is available. Your cart stays in this browser, with up to 99 of each item.</p>
+      {storageError && <p className="demo-note" role="alert">Your cart could not be saved. It will remain available only while this tab stays open.</p>}
+
       <main className="layout">
         <section className="store">
+          <div className="store-tools">
+            <label>Search products<input type="search" value={query} onChange={(event) => setQuery(event.target.value)} /></label>
+            <label>Sort products<select value={sort} onChange={(event) => setSort(event.target.value)}><option value="featured">Catalogue order</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name A–Z</option></select></label>
+          </div>
+          <p className="demo-note" role="status">{visibleProducts.length} of {products.length} products</p>
           <CategoryFilter
             categories={CATEGORIES}
             active={activeCategory}

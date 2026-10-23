@@ -8,7 +8,7 @@ export const CATEGORIES = [
 
 export const products = [
   {
-    id: crypto.randomUUID(),
+    id: 'playstation-5-slim',
     name: 'PlayStation 5 Slim',
     category: 'Consoles',
     price: 54990,
@@ -16,7 +16,7 @@ export const products = [
       'The smaller PS5 with the same guts inside. Games load fast off the SSD and the big exclusives hold a steady 60fps. This is the disc version, so you can still buy and trade physical copies.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'xbox-series-x',
     name: 'Xbox Series X',
     category: 'Consoles',
     price: 52990,
@@ -24,7 +24,7 @@ export const products = [
       "Microsoft's most powerful box. Quick Resume lets you jump between a few games without sitting through load screens, and Game Pass makes it easy to try things before you buy.",
   },
   {
-    id: crypto.randomUUID(),
+    id: 'nintendo-switch-oled',
     name: 'Nintendo Switch OLED',
     category: 'Consoles',
     price: 34999,
@@ -32,7 +32,7 @@ export const products = [
       'The same Switch you know, but the 7-inch OLED screen makes a real difference in handheld mode. Colours look richer and the kickstand is finally sturdy. Good for the couch or a long train ride.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'dualsense-wireless-controller',
     name: 'DualSense Wireless Controller',
     category: 'Controllers',
     price: 5990,
@@ -40,7 +40,7 @@ export const products = [
       'The trigger resistance still catches people off guard the first time they feel it. Comfortable over a long session, and it pairs with a PC over Bluetooth if you want it there too.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'xbox-wireless-controller',
     name: 'Xbox Wireless Controller',
     category: 'Controllers',
     price: 5499,
@@ -48,7 +48,7 @@ export const products = [
       'Plain and reliable, and it fits most hands. Works on Xbox, PC, and phones without any fuss. It runs on AA batteries, which some people love and some people really do not.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'elden-ring',
     name: 'Elden Ring',
     category: 'Games',
     price: 3999,
@@ -56,7 +56,7 @@ export const products = [
       "FromSoftware's open world that ate everyone's 2022. It is tough, but you set your own pace and can summon help when a boss will not budge. Bring patience.",
   },
   {
-    id: crypto.randomUUID(),
+    id: 'god-of-war-ragnarok',
     name: 'God of War Ragnarok',
     category: 'Games',
     price: 3499,
@@ -64,7 +64,7 @@ export const products = [
       'Kratos and Atreus pick up where the last game left off. Big set pieces, a story that actually lands, and combat with real weight to it. The campaign runs long if you do the side quests.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'ea-sports-fc-24',
     name: 'EA Sports FC 24',
     category: 'Games',
     price: 3499,
@@ -72,7 +72,7 @@ export const products = [
       'The football game that used to be called FIFA. Same Ultimate Team grind, fresh rosters, and a few tweaks to how the ball moves. If you played last year, you already know the routine.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'asus-rog-strix-g16',
     name: 'ASUS ROG Strix G16',
     category: 'Gaming Laptops',
     price: 149990,
@@ -80,7 +80,7 @@ export const products = [
       'An RTX 40-series laptop that chews through current games on high settings. The fans get loud under load, but the cooling keeps up and the 165Hz screen is bright and quick.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'lenovo-legion-5',
     name: 'Lenovo Legion 5',
     category: 'Gaming Laptops',
     price: 112990,
@@ -88,7 +88,7 @@ export const products = [
       'A sensible mid-range gaming laptop. Nice keyboard, solid build, and it handles most titles at 1080p without complaint. The battery is fine for a gaming machine, so keep the charger close.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'steelseries-arctis-nova-7',
     name: 'SteelSeries Arctis Nova 7',
     category: 'Headsets',
     price: 16999,
@@ -96,7 +96,7 @@ export const products = [
       'A wireless headset that stays comfy for hours, with a retractable mic that comes through clearly on calls. It connects to two devices at once, so your game and your phone can share the same ears.',
   },
   {
-    id: crypto.randomUUID(),
+    id: 'hyperx-cloud-iii',
     name: 'HyperX Cloud III',
     category: 'Headsets',
     price: 7499,

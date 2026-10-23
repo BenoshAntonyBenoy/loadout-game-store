@@ -42,6 +42,7 @@ function Cart({ items, total, count, onIncrease, onDecrease, onRemove }) {
                       type="button"
                       className="qty-btn"
                       onClick={() => onIncrease(item.id)}
+                      disabled={item.quantity >= 99}
                       aria-label={`Add another ${item.name}`}
                     >
                       +
